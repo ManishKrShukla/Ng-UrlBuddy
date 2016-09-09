@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body ng-app="attndcMgmtApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="md-subheader">
+                <div class="md-subheader-inner">
+                    <div class="md-subheader-content header-content">
+                        <span class="heading ng-scope">Ng-Attendance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view=""></div>
+    </div>
+
+    <div class="footer">
+        <p> <i class="material-icons">bookmark</i> An Angular {Angular + ngMaterial + Gulp + Yeoman + Babel + stuff} Demo.</p>
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="app-components/app.js"></script>
+    <script src="app-components/decorators/delayResolve.js"></script>
+
+    <script src="app-components/common/user-service.js"></script>
+
+    <script src="app-components/login/login-controller.js"></script>
+    <script src="app-components/users/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
