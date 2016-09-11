@@ -1,0 +1,35 @@
+<div class="full-height">
+    <section layout="row" flex class="full-calc-height">
+        <md-sidenav class="sidenav-left" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Actions</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-list>
+                    <md-list-item>
+                        <md-button class="md-primary" ui-sref="app.attendance" ng-click="appCtrl.toggleLeft()">Add Attendance</md-button>
+                    </md-list-item>
+                    <md-list-item ng-if="appCtrl.isAdmin">
+                        <md-button class="md-primary" ui-sref="app.add-user" ng-click="appCtrl.toggleLeft()">Add User</md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button class="md-primary" ui-sref="app.view" ng-click="appCtrl.toggleLeft()">View Attendance</md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button class="md-primary" ui-sref="logout" ng-click="appCtrl.toggleLeft()">Logout</md-button>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+
+        <md-content flex layout-padding>
+
+            <md-button ng-click="appCtrl.toggleLeft()" class="md-primary sidemenu-toggle" hide-gt-md>
+                <i class="material-icons">menu</i>
+            </md-button>
+
+            <ui-view></ui-view>
+        </md-content>
+
+    </section>
+</div>

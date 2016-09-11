@@ -8,10 +8,7 @@
  * Controller of the attndcMgmtApp
  */
 angular.module('attndcMgmtApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('LogoutCtrl', ['$state', 'UserService', function($state, userService) {
+        userService.logout();
+        $state.transitionTo('login');
+    }]);

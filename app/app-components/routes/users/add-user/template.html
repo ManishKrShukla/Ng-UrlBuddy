@@ -1,0 +1,57 @@
+<md-content class="login-box" ng-class="{'loading-container': userCtrl.loading}" flex-gt-sm="50" flex-sm="100" layout-padding="">
+    <h3 class="text-center">Add New User</h3>
+    <form class="flex" name="userForm">
+        <md-input-container class="md-block">
+            <label>User name</label>
+            <input type="text" name="userName" ng-model="userCtrl.userDetails.userName" required="" />
+            <div ng-messages="userForm.username.$error">
+                <div ng-message="required">You must specify the date.!</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Password</label>
+            <input type="password" name="password" ng-model="userCtrl.userDetails.password" required="" />
+            <div ng-messages="userForm.username.$error">
+                <div ng-message="required">You must specify the start time.!</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block select-tag-padding">
+            <label>User</label>
+            <md-select ng-model="userCtrl.userDetails.group" required>
+                <md-option ng-repeat="user in userCtrl.userTypes" ng-value="user">
+                    {{user | capitalize}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container class="md-block text-center">
+            <md-button class="md-primary md-raised" ng-disabled="userForm.$invalid" ng-click="userCtrl.addUser()">
+                Add User
+            </md-button>
+
+            <md-progress-circular md-mode="indeterminate" ng-show="userCtrl.loading" class="display-inline" md-diameter="20"></md-progress-circular>
+        </md-input-container>
+    </form>
+</md-content>
+
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th class="text-align-left">
+                User name
+            </th>
+            <th class="text-align-left">
+                Group
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="user in userCtrl.userList">
+            <td>{{user.name}}</td>
+            <td>{{user.group | capitalize}}</td>
+        </tr>
+
+    </tbody>
+</table>

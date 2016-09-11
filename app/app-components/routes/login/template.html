@@ -1,4 +1,4 @@
-<md-content class="login-box" flex-gt-sm="50" flex-sm="100" layout-padding="">
+<md-content class="login-box" ng-class="{'loading-container': loginCtrl.loading}" flex-gt-sm="50" flex-sm="100" layout-padding="">
     <h3 class="text-center">Login Here</h3>
     <form class="flex" name="loginForm">
         <md-input-container class="md-block">
@@ -16,7 +16,11 @@
             </div>
         </md-input-container>
         <md-input-container class="md-block text-center">
-            <md-button class="md-primary md-raised" ng-click="loginCtrl.login()">Login</md-button>
+            <md-button class="md-primary md-raised" ng-disabled="loginForm.$invalid" ng-click="loginCtrl.login()">
+                Login
+            </md-button>
+
+            <md-progress-circular md-mode="indeterminate" ng-show="loginCtrl.loading" class="display-inline" md-diameter="20"></md-progress-circular>
         </md-input-container>
     </form>
 </md-content>

@@ -10,6 +10,9 @@
 
 angular.module('attndcMgmtApp').config(['$provide', '$injector', function($provide, $injector) {
 
+    let injector = angular.injector(['ng']),
+        $timeout = injector.get('$timeout');
+
     $provide.decorator('$q', [
         '$delegate',
         function $qDecorator($delegate) {
@@ -17,8 +20,8 @@ angular.module('attndcMgmtApp').config(['$provide', '$injector', function($provi
             $delegate.delayResolve = function() {
                 let deferred = $delegate.defer();
 
-                setTimeout(() => {
-                    deferred.resolve($delegate);
+                $timeout(() => {
+                    deferred.resolve({});
                 }, 2000);
 
                 return deferred.promise;
