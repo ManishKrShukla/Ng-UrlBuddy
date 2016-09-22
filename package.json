@@ -39,6 +39,7 @@
     "test": "karma start test\\karma.conf.js"
   },
   "dependencies": {
+    "bower": "^1.7.9",
     "taffy": "^2.6.2"
   }
 }

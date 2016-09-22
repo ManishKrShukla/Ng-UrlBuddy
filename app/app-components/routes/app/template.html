@@ -1,0 +1,28 @@
+<md-content class="login-box" ng-class="{'loading-container': appCtrl.loading}" flex-gt-sm="50" flex-sm="100" layout-padding="">
+    <form class="flex" name="urlForm">
+        <md-input-container class="md-block">
+            <label>Your Url Here</label>
+            <input name="url" ng-model="appCtrl.urlForm.url" required="" />
+            <div ng-messages="urlForm.url.$error">
+                <div ng-message="required">You must enter the URL.!</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container class="md-block" ng-if="appCtrl.urlForm.shortUrl">
+            <label>Shortened URL</label>
+            <input name="shortUrl" ng-model="appCtrl.urlForm.shortUrl" id="shortUrl" />
+
+            <md-button clipboard text="appCtrl.urlForm.shortUrl" class="copy-button">
+                <i class="material-icons">insert_drive_file</i>
+            </md-button>
+        </md-input-container>
+
+        <md-input-container class="md-block text-center">
+            <md-button class="md-primary md-raised" ng-disabled="urlForm.$invalid" ng-click="appCtrl.shortenUrl()">
+                Short it Up
+            </md-button>
+
+            <md-progress-circular md-mode="indeterminate" ng-show="appCtrl.loading" class="display-inline" md-diameter="20"></md-progress-circular>
+        </md-input-container>
+    </form>
+</md-content>

@@ -18,7 +18,7 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="attndcMgmtApp">
+<body ng-app="urlShortnerApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -29,7 +29,7 @@
             <div class="md-subheader">
                 <div class="md-subheader-inner">
                     <div class="md-subheader-content header-content">
-                        <span class="heading ng-scope">Ng-Attendance</span>
+                        <span class="heading ng-scope">Ng-UrlBuddy</span>
                     </div>
                 </div>
             </div>
@@ -48,21 +48,9 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="app-components/app.js"></script>
-    <script src="app-components/decorators/delayResolve.js"></script>
-    <script src="app-components/decorators/map.js"></script>
-    <script src="app-components/decorators/reduce.js"></script>
-    <script src="app-components/decorators/filter.js"></script>
-
-    <script src="app-components/common/user-service.js"></script>
-    <script src="app-components/common/attendance-service.js"></script>
-
-    <script src="app-components/routes/login/controller.js"></script>
-    <script src="app-components/routes/logout/controller.js"></script>
-
-    <script src="app-components/routes/users/controller.js"></script>
-    <script src="app-components/routes/users/add-attendance/controller.js"></script>
-    <script src="app-components/routes/users/add-user/controller.js"></script>
-    <script src="app-components/routes/users/view/controller.js"></script>
+    <script src="app-components/common/http-service.js"></script>
+    <script src="app-components/routes/app/controller.js"></script>
+    <script src="app-components/routes/app/controller.js"></script>
     <!-- endbuild -->
 </body>
 

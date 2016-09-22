@@ -14,6 +14,17 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
+.copy-button {
+    padding: 0px;
+    min-width: auto;
+    min-height: auto;
+    float: right;
+}
+
+#shortUrl {
+    width: calc(100% - 60px);
+}
+
 .header,
 .marketing,
 .footer {
